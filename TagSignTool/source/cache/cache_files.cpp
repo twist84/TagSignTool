@@ -14,7 +14,7 @@ cache_file_tag_instance* cache_file_tags_header::get_instance(long tag_instance_
 		return nullptr;
 
 	unsigned long tag_offset = reinterpret_cast<unsigned long*>(base + tag_instance_offsets)[tag_instance_index];
-	if (tag_offset == 0xFFFFFFFF || tag_offset > sizeof(cache_file_tags_header))
+	if (tag_offset == 0xFFFFFFFF || tag_offset < sizeof(cache_file_tags_header))
 		return nullptr;
 
 	return reinterpret_cast<cache_file_tag_instance*>(base + tag_offset);
