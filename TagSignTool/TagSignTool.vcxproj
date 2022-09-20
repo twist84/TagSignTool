@@ -88,14 +88,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\cache\cache_files.cpp" />
+    <ClCompile Include="source\cseries\cseries.cpp" />
+    <ClCompile Include="source\cseries\cseries_strings.cpp" />
     <ClCompile Include="source\memory\crc.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\tag_files\files.cpp" />
+    <ClCompile Include="source\tag_files\files_windows.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\cache\cache_files.hpp" />
+    <ClInclude Include="source\cseries\cseries.hpp" />
+    <ClInclude Include="source\cseries\cseries_strings.hpp" />
     <ClInclude Include="source\memory\crc.hpp" />
     <ClInclude Include="source\tag_files\files.hpp" />
+    <ClInclude Include="source\tag_files\files_windows.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
