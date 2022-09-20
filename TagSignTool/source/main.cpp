@@ -7,11 +7,22 @@
 const unsigned long tags_file_buffer_size = 256 * 1024 * 1024;
 unsigned char tags_file_buffer[tags_file_buffer_size]{};
 
+char usage[] = R"(
+Usage:
+	TagSignTool.exe <tags.dat path>
+
+Example:
+	TagSignTool.exe "C:\Games\Halo Online (1.106708 2015-03-20)\maps\tags.dat"
+)";
 
 int main(int argc, char* argv[])
 {
 	if (argc < 2)
+	{
+		puts(usage);
+
 		return 1;
+	}
 
 	char const* tags_path = argv[1];
 	s_file_reference tags_file{};
