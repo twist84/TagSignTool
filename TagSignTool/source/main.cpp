@@ -3,8 +3,10 @@
 #include "tag_files/files.hpp"
 #include "tag_files/files_windows.hpp"
 
+#include <stdio.h>
+
 // 256 MB max tags file size
-const unsigned long tags_file_buffer_size = 256 * 1024 * 1024;
+const unsigned long tags_file_buffer_size = 1 << 28;
 unsigned char tags_file_buffer[tags_file_buffer_size]{};
 
 char usage[] = R"(
@@ -19,7 +21,7 @@ int main(int argc, char* argv[])
 {
 	if (argc < 2)
 	{
-		puts(usage);
+		printf(usage);
 
 		return 1;
 	}
@@ -41,7 +43,11 @@ int main(int argc, char* argv[])
 		return 4;
 
 	tags_header = reinterpret_cast<cache_file_tags_header*>(tags_file_buffer);
-	recalculate_checksums(tags_header);
+
+	double elapsed_time = 0.0;
+	tags_header->sign_instances(&elapsed_time);
+
+	printf("Signing all instances took %.2lf seconds.", elapsed_time);
 
 	file_reference_set_name(&tags_file, "tags_signed.dat");
 	file_create(&tags_file);

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <stdio.h>
-
 enum e_file_reference_flags
 {
 	_file_reference_flag_is_file_name = 0,

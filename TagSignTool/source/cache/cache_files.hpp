@@ -29,10 +29,10 @@ union cache_file_tag_instance
 #pragma warning(disable : 4200)
 	unsigned char base[];
 #pragma warning(pop)
+
+	void sign_instance();
 };
 static_assert(sizeof(cache_file_tag_instance) == 0x24);
-
-extern void recalculate_checksum(cache_file_tag_instance* tag_instance);
 
 union cache_file_tags_header
 {
@@ -58,8 +58,7 @@ union cache_file_tags_header
 	unsigned char base[];
 #pragma warning(pop)
 
+	cache_file_tag_instance* get_instance(long tag_instance_index);
+	void sign_instances(double* out_elapsed_time = nullptr);
 };
 static_assert(sizeof(cache_file_tags_header) == 0x20);
-
-extern cache_file_tag_instance* tag_instance_get(cache_file_tags_header* tags_header, long tag_instance_index);
-extern void recalculate_checksums(cache_file_tags_header* tags_header);
