@@ -124,7 +124,7 @@ bool file_read(s_file_reference* file_reference, unsigned long size, void** buff
 	if (!size)
 		return true;
 
-	if (ReadFile(file_reference->handle, buffer, size, &bytes_read, NULL))
+	if (ReadFile(file_reference->handle, *buffer, size, &bytes_read, NULL))
 	{
 		if (size == bytes_read)
 			result = true;
