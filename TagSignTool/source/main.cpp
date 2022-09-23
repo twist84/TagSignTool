@@ -51,7 +51,7 @@ int main_body(char const* tags_path)
 
 	file_get_size(&tags_file, &tags_file_size);
 	tags_file_buffer = physical_memory_malloc(tags_file_size);
-	if (!file_read_into_buffer(&tags_file, &tags_file_buffer, tags_file_size))
+	if (!file_read_into_buffer(&tags_file, tags_file_buffer, tags_file_size))
 		return 4;
 
 	tags_header = static_cast<cache_file_tags_header*>(tags_file_buffer);

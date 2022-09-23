@@ -18,7 +18,7 @@ enum e_file_open_flags
 bool file_create(s_file_reference* file_reference);
 bool file_exists(s_file_reference* file_reference);
 bool file_open(s_file_reference* file_reference, unsigned long open_flags, long* error);
-bool file_read(s_file_reference* file_reference, unsigned long size, void** buffer);
+bool file_read(s_file_reference* file_reference, unsigned long size, void* buffer);
 bool file_write(s_file_reference* file_reference, unsigned long size, void const* buffer);
 bool file_close(s_file_reference* file_reference);
 bool file_get_size(s_file_reference* file_reference, unsigned long* out_file_size);

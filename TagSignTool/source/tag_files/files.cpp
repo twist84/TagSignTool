@@ -41,7 +41,7 @@ void file_reference_create_from_path(s_file_reference* file_reference, char cons
 	file_reference_set_name(file_reference, path);
 }
 
-bool file_read_into_buffer(s_file_reference* file_reference, void** buffer, unsigned long size)
+bool file_read_into_buffer(s_file_reference* file_reference, void* buffer, unsigned long size)
 {
 	assert(file_reference);
 	assert(buffer);
