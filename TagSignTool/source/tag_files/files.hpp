@@ -1,16 +1,25 @@
 #pragma once
 
+#define FILE_REFERENCE_SIGNATURE 'filo'
+#define NUMBER_OF_FILE_REFERENCE_LOCATIONS 2
+
 enum e_file_reference_flags
 {
 	_file_reference_flag_is_file_name = 0,
 	_file_reference_flag_open_for_write,
 };
 
-struct s_file_reference
+struct file_reference_info
 {
 	unsigned long signature;
 	unsigned short flags;
+	short location;
 	char path[256];
+};
+static_assert(sizeof(file_reference_info) == 0x108);
+
+struct s_file_reference : file_reference_info
+{
 	void* handle;
 	long position;
 };
