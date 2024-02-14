@@ -1,7 +1,4 @@
-#include "cseries/cseries.hpp"
-
-#include <assert.h>
-#include <string.h>
+#include "stdafx.h"
 
 char* csstrnzcpy(char* s1, char const* s2, unsigned long s1_size)
 {
@@ -18,3 +15,21 @@ char* csstrnzcpy(char* s1, char const* s2, unsigned long s1_size)
 
 	return s1;
 }
+
+char* csstrnzcat(char* s1, char const* s2, dword size)
+{
+	assert(s1 && s2);
+	assert(size > 0 && size <= 0x100000);
+
+	dword len = csstrnlen(s1, size);
+	return csstrnzcpy(s1 + len, s2, size - len);
+}
+
+dword csstrnlen(char const* s, dword size)
+{
+	assert(s);
+	assert(size > 0 && size <= 0x100000);
+
+	return strnlen(s, size);
+}
+

@@ -58,13 +58,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)source\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)source\;$(SolutionDir)ThirdParty\directx\include\;$(SolutionDir)ThirdParty\directxtex\include\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\directx\lib.X86\;$(SolutionDir)ThirdParty\directxtex\lib.X86\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -75,15 +76,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)source\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)source\;$(SolutionDir)ThirdParty\directx\include\;$(SolutionDir)ThirdParty\directxtex\include\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\directx\lib.X86\;$(SolutionDir)ThirdParty\directxtex\lib.X86\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -91,8 +94,9 @@
     <ClCompile Include="source\cache\physical_memory_map.cpp" />
     <ClCompile Include="source\cseries\cseries.cpp" />
     <ClCompile Include="source\cseries\cseries_strings.cpp" />
+    <ClCompile Include="source\cseries\cseries_system_memory.cpp" />
     <ClCompile Include="source\memory\crc.cpp" />
-    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\main\main.cpp" />
     <ClCompile Include="source\tag_files\files.cpp" />
     <ClCompile Include="source\tag_files\files_windows.cpp" />
   </ItemGroup>
@@ -101,9 +105,20 @@
     <ClInclude Include="source\cache\physical_memory_map.hpp" />
     <ClInclude Include="source\cseries\cseries.hpp" />
     <ClInclude Include="source\cseries\cseries_strings.hpp" />
+    <ClInclude Include="source\cseries\cseries_system_memory.hpp" />
+    <ClInclude Include="source\main\main.hpp" />
+    <ClInclude Include="source\math\function_definitions.hpp" />
+    <ClInclude Include="source\math\integer_math.hpp" />
+    <ClInclude Include="source\math\real_math.hpp" />
     <ClInclude Include="source\memory\crc.hpp" />
+    <ClInclude Include="source\objects\object_definitions.hpp" />
+    <ClInclude Include="source\physics\character_physics_definitions.hpp" />
+    <ClInclude Include="source\stdafx.h" />
     <ClInclude Include="source\tag_files\files.hpp" />
     <ClInclude Include="source\tag_files\files_windows.hpp" />
+    <ClInclude Include="source\tag_files\tag_groups.hpp" />
+    <ClInclude Include="source\units\biped_definitions.hpp" />
+    <ClInclude Include="source\units\unit_definition.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

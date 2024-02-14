@@ -11,8 +11,8 @@ enum e_file_reference_flags
 
 struct file_reference_info
 {
-	unsigned long signature;
-	unsigned short flags;
+	tag signature;
+	word_flags flags;
 	short location;
 	char path[256];
 };
@@ -25,10 +25,13 @@ struct s_file_reference : file_reference_info
 };
 static_assert(sizeof(s_file_reference) == 0x110);
 
-void file_reference_agnostic_create(s_file_reference* file_reference);
-void file_reference_create(s_file_reference* file_reference);
-void file_reference_set_name(s_file_reference* file_reference, char const* path);
-void file_reference_create_from_path(s_file_reference* file_reference, char const* path);
+void file_reference_agnostic_create(s_file_reference& file_reference);
+void file_reference_create(s_file_reference& file_reference);
+void file_reference_set_name(s_file_reference& file_reference, char const* path);
+void file_reference_create_from_path(s_file_reference& file_reference, char const* path, bool add_directory);
 
-bool file_read_into_buffer(s_file_reference* file_reference, void* buffer, unsigned long size);
-bool file_write_from_buffer(s_file_reference* file_reference, unsigned long size, void const* buffer);
+bool file_read_into_buffer(s_file_reference& file_reference, void* buffer, dword size);
+bool file_write_from_buffer(s_file_reference& file_reference, dword size, void const* buffer);
+void* file_read_into_memory_with_null_padding(s_file_reference& file_reference, dword& size, dword pad_size);
+void* file_read_into_memory(s_file_reference& file_reference, dword& size);
+

@@ -1,13 +1,13 @@
-#include "memory/crc.hpp"
+#include "stdafx.h"
 
-unsigned long adler_new()
+dword adler_new()
 {
 	return adler32(0, 0, 0);
 }
 
-unsigned long adler32(unsigned long adler, const unsigned char* buf, unsigned long len)
+dword adler32(dword adler, const byte* buf, dword len)
 {
-	unsigned long sum2 = (adler >> 16) & 0xFFFF;
+	dword sum2 = (adler >> 16) & 0xFFFF;
 	adler &= 0xFFFF;
 
 	if (len == 1ul)
@@ -47,7 +47,7 @@ unsigned long adler32(unsigned long adler, const unsigned char* buf, unsigned lo
 	while (len >= 0x15B0)
 	{
 		len -= 0x15B0;
-		unsigned long n = 0x15B0 / 16;
+		dword n = 0x15B0 / 16;
 
 		do
 		{
@@ -113,3 +113,4 @@ unsigned long adler32(unsigned long adler, const unsigned char* buf, unsigned lo
 
 	return adler | (sum2 << 16);
 }
+
