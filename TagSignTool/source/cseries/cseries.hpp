@@ -94,6 +94,9 @@ const long LONG_BITS = SIZEOF_BITS(long);
 
 #define NONE -1
 
+long csstricmp(char const* s1, char const* s2);
+long csstrcmp(char const* s1, char const* s2);
+long csstrnicmp(char const* s1, char const* s2, dword max_count);
 char* csstrnzcpy(char* s1, char const* s2, unsigned long s1_size);
 char* csstrnzcat(char* s1, char const* s2, dword size);
 dword csstrnlen(char const* s, dword size);

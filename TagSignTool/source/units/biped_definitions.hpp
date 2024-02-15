@@ -3,6 +3,7 @@
 #include "cseries/cseries.hpp"
 #include "math/function_definitions.hpp"
 #include "physics/character_physics_definitions.hpp"
+#include "tag_files/tag_groups.hpp"
 #include "units/unit_definition.hpp"
 
 struct s_biped_camera_height

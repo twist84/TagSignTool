@@ -72,8 +72,8 @@ union cache_file_tags_header
 #pragma warning(pop)
 
 	cache_file_tag_instance* get_instance(long tag_instance_index);
-	void sign_instances(double& elapsed_time);
-	void modify_group(double& elapsed_time, tag group_tag, void(*callback)(cache_file_tag_instance*));
+	void sign_instances();
+	void modify_group(tag group_tag, void(*callback)(cache_file_tag_instance*));
 };
 static_assert(sizeof(cache_file_tags_header) == 0x20);
 

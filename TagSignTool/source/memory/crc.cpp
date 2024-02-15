@@ -25,7 +25,7 @@ dword adler32(dword adler, const byte* buf, dword len)
 		return adler | (sum2 << 16);
 	}
 
-	if (buf == nullptr)
+	if (!buf)
 		return 1ul;
 
 	if (len < 16)

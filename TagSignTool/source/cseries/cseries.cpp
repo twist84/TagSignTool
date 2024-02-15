@@ -3,6 +3,21 @@
 #include <assert.h>
 #include <string.h>
 
+long csstricmp(char const* s1, char const* s2)
+{
+	return _stricmp(s1, s2);
+}
+
+long csstrcmp(char const* s1, char const* s2)
+{
+	return strcmp(s1, s2);
+}
+
+long csstrnicmp(char const* s1, char const* s2, dword max_count)
+{
+	return _strnicmp(s1, s2, max_count);
+}
+
 char* csstrnzcpy(char* s1, char const* s2, unsigned long s1_size)
 {
 	assert(s1 && s2);

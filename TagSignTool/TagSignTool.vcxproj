@@ -63,7 +63,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -80,7 +80,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -94,8 +94,11 @@
     <ClCompile Include="source\cseries\cseries_system_memory.cpp" />
     <ClCompile Include="source\memory\crc.cpp" />
     <ClCompile Include="source\main\main.cpp" />
+    <ClCompile Include="source\shell\shell.cpp" />
+    <ClCompile Include="source\shell\shell_windows.cpp" />
     <ClCompile Include="source\tag_files\files.cpp" />
     <ClCompile Include="source\tag_files\files_windows.cpp" />
+    <ClCompile Include="source\units\bipeds.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\cache\cache_files.hpp" />
@@ -110,9 +113,13 @@
     <ClInclude Include="source\memory\crc.hpp" />
     <ClInclude Include="source\objects\object_definitions.hpp" />
     <ClInclude Include="source\physics\character_physics_definitions.hpp" />
+    <ClInclude Include="source\profiler\profiler.hpp" />
+    <ClInclude Include="source\shell\shell.hpp" />
+    <ClInclude Include="source\shell\shell_windows.hpp" />
     <ClInclude Include="source\tag_files\files.hpp" />
     <ClInclude Include="source\tag_files\files_windows.hpp" />
     <ClInclude Include="source\tag_files\tag_groups.hpp" />
+    <ClInclude Include="source\units\bipeds.hpp" />
     <ClInclude Include="source\units\biped_definitions.hpp" />
     <ClInclude Include="source\units\unit_definition.hpp" />
   </ItemGroup>

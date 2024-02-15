@@ -22,37 +22,24 @@ cache_file_tag_instance* cache_file_tags_header::get_instance(long tag_instance_
 	return reinterpret_cast<cache_file_tag_instance*>(base + tag_offset);
 }
 
-void cache_file_tags_header::sign_instances(double& elapsed_time)
+void cache_file_tags_header::sign_instances()
 {
-	time_t start;
-	time_t end;
-
-	time(&start);
-
 	for (long tag_instance_index = 0; tag_instance_index < tag_instance_count; tag_instance_index++)
 	{
 		cache_file_tag_instance* tag_instance = get_instance(tag_instance_index);
-		if (tag_instance == nullptr)
+		if (!tag_instance)
 			continue;
 
 		tag_instance->sign_instance();
 	}
-
-	time(&end);
-	elapsed_time = difftime(end, start);
 }
 
-void cache_file_tags_header::modify_group(double& elapsed_time, tag group_tag, void(*callback)(cache_file_tag_instance*))
+void cache_file_tags_header::modify_group(tag group_tag, void(*callback)(cache_file_tag_instance*))
 {
-	time_t start;
-	time_t end;
-
-	time(&start);
-
 	for (long tag_instance_index = 0; tag_instance_index < tag_instance_count; tag_instance_index++)
 	{
 		cache_file_tag_instance* tag_instance = get_instance(tag_instance_index);
-		if (tag_instance == nullptr)
+		if (!tag_instance)
 			continue;
 
 		if (!tag_instance->tag_group.is_group(group_tag))
@@ -62,8 +49,5 @@ void cache_file_tags_header::modify_group(double& elapsed_time, tag group_tag, v
 
 		callback(tag_instance);
 	}
-
-	time(&end);
-	elapsed_time = difftime(end, start);
 }
 
