@@ -1,5 +1,8 @@
 #pragma once
 
+#include "math/integer_math.hpp"
+#include "math/real_math.hpp"
+
 //// 32-character ascii string
 //using string = char[32];
 //static_assert(sizeof(string) == 0x20);

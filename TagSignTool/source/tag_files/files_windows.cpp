@@ -1,4 +1,7 @@
-#include "stdafx.h"
+#include "tag_files/files_windows.hpp"
+
+#include <windows.h>
+#include <assert.h>
 
 bool file_create_parent_directories_if_not_present(s_file_reference const& file_reference)
 {

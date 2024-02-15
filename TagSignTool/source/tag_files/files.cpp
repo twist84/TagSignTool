@@ -1,4 +1,10 @@
-#include "stdafx.h"
+#include "tag_files/files.hpp"
+
+#include "cseries/cseries_system_memory.hpp"
+#include "tag_files/files_windows.hpp"
+
+#include <windows.h>
+#include <assert.h>
 
 void file_reference_agnostic_create(s_file_reference& file_reference)
 {

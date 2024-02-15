@@ -1,4 +1,9 @@
-#include "stdafx.h"
+#include "cache/cache_files.hpp"
+
+#include "memory/crc.hpp"
+
+#include <stdio.h>
+#include <time.h>
 
 void cache_file_tag_instance::sign_instance()
 {

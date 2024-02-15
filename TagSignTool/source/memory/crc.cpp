@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "memory/crc.hpp"
 
 dword adler_new()
 {

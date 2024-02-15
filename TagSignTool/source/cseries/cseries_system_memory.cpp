@@ -1,4 +1,6 @@
-#include "stdafx.h"
+#include "cseries/cseries_system_memory.hpp"
+
+#include <windows.h>
 
 void* system_malloc(unsigned int size)
 {

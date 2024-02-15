@@ -1,5 +1,10 @@
 #pragma once
 
+#include "cseries/cseries.hpp"
+#include "math/function_definitions.hpp"
+#include "physics/character_physics_definitions.hpp"
+#include "units/unit_definition.hpp"
+
 struct s_biped_camera_height
 {
 	c_string_id weapon_class;

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "cseries/cseries.hpp"
+#include "objects/object_definitions.hpp"
+
 struct _unit_definition
 {
 	_object_definition object;

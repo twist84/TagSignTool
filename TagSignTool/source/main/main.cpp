@@ -1,4 +1,14 @@
-#include "stdafx.h"
+#include "main/main.hpp"
+
+#include "cache/cache_files.hpp"
+#include "cache/physical_memory_map.hpp"
+#include "cseries/cseries_strings.hpp"
+#include "tag_files/files.hpp"
+#include "tag_files/files_windows.hpp"
+#include "tag_files/tag_groups.hpp"
+#include "units/biped_definitions.hpp"
+
+#include <stdio.h>
 
 char usage[] = R"(
 Usage:
@@ -10,25 +20,18 @@ Example:
 
 int main(int argc, char* argv[])
 {
-	physical_memory_initialize();
-
 	char const* tags_path = "tags.dat";
 
-	if (argc < 2)
+	s_file_reference tags_file{};
+	file_reference_create_from_path(tags_file, tags_path, false);
+	if (argc < 2 || !file_exists(tags_file))
 	{
-		s_file_reference tags_file{};
-		file_reference_create_from_path(tags_file, tags_path, false);
-		if (!file_exists(tags_file))
-		{
-			printf(usage);
+		printf(usage);
 
-			return 1;
-		}
-		else
-		{
-
-		}
+		return 1;
 	}
+
+	physical_memory_initialize();
 
 	int result = main_body(tags_path);
 

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "cseries/cseries.hpp"
+#include "tag_files/files.hpp"
+
 enum e_file_open_flags
 {
 	_file_open_flag_desired_access_read = 0,

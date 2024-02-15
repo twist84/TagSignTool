@@ -1,5 +1,7 @@
 #pragma once
 
+#include "cseries/cseries.hpp"
+
 struct _object_definition
 {
 	byte __data[0x120];

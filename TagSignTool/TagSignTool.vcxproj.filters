@@ -95,8 +95,5 @@
     <ClInclude Include="source\math\integer_math.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

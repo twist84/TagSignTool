@@ -1,5 +1,7 @@
 #pragma once
 
+#include "cseries/cseries.hpp"
+
 #define FILE_REFERENCE_SIGNATURE 'filo'
 #define NUMBER_OF_FILE_REFERENCE_LOCATIONS 2
 

@@ -1,4 +1,7 @@
-#include "stdafx.h"
+#include "cseries/cseries.hpp"
+
+#include <assert.h>
+#include <string.h>
 
 char* csstrnzcpy(char* s1, char const* s2, unsigned long s1_size)
 {

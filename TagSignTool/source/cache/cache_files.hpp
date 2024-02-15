@@ -1,5 +1,8 @@
 #pragma once
 
+#include "cseries/cseries.hpp"
+#include "tag_files/tag_groups.hpp"
+
 struct s_file_last_modification_date
 {
 	dword date_time_low;

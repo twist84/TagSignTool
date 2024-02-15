@@ -1,4 +1,9 @@
-#include "stdafx.h"
+#include "cseries/cseries_strings.hpp"
+
+#include "cseries/cseries.hpp"
+
+#include <assert.h>
+#include <string.h>
 
 bool string_ends_with(char const* s1, char const* s2)
 {

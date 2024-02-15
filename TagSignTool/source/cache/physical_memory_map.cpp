@@ -1,4 +1,6 @@
-#include "stdafx.h"
+#include "cache/physical_memory_map.hpp"
+
+#include <windows.h>
 
 byte* physical_memory_base = nullptr;
 
